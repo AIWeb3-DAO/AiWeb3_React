@@ -10,14 +10,23 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",
+    "@polkadot-onboard/core": "^1.0.0",
+    "@polkadot-onboard/injected-wallets": "^1.0.0",
+    "@polkadot-onboard/react": "^1.0.0",
+    "@polkadot-onboard/wallet-connect": "^1.0.0",
+    "@rainbow-me/rainbowkit": "^1.1.2",
     "@types/node": "^20.2.5",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
     "aos": "^3.0.0-beta.6",
+    "install": "^0.13.0",
     "next": "^13.4.4",
+    "npm": "^10.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "viem": "^1.16.5",
+    "wagmi": "^1.4.3"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
