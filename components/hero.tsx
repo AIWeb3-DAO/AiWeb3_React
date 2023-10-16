@@ -1,6 +1,11 @@
 import VideoThumb from '@/public/images/hero-image.png'
 import ModalVideo from '@/components/modal-video'
-
+import type { StaticImageData } from 'next/image'
+let aiweb_imaga_data:StaticImageData = {
+    src: '/images/aiweb3_promotion.png',
+    height: 512,
+    width: 512,
+}
 export default function Hero() {
   return (
     <section className="relative">
@@ -29,12 +34,12 @@ export default function Hero() {
 
           {/* Section header */}
           <div className="text-center pb-12 md:pb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Make your website <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">wonderful</span></h1>
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Build Web3 Community <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Together</span></h1>
             <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p>
+              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">We are AiWeb3 Community, focuing on Web3/AI tech, particularly for polkadot ecosystem.</p>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
-                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Start free trial</a>
+                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Join Us via NFT Mint</a>
                 </div>
                 <div>
                   <a className="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">Learn more</a>
@@ -45,13 +50,14 @@ export default function Hero() {
 
           {/* Hero image */}
           <ModalVideo
-            thumb={VideoThumb}
+            thumb = {aiweb_imaga_data}
             thumbWidth={768}
             thumbHeight={432}
             thumbAlt="Modal video thumbnail"
-            video="/videos/video.mp4"
+            video="/videos/aiweb3_promotion.mp4"
             videoWidth={1920}
-            videoHeight={1080} />
+            videoHeight={1080} 
+          />
 
         </div>
 
