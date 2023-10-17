@@ -1,12 +1,16 @@
+'use client'
 import VideoThumb from '@/public/images/hero-image.png'
 import ModalVideo from '@/components/modal-video'
 import type { StaticImageData } from 'next/image'
-let aiweb_imaga_data:StaticImageData = {
-    src: '/images/aiweb3_promotion.png',
-    height: 512,
-    width: 512,
+let aiweb_imaga_data: StaticImageData = {
+  src: '/images/aiweb3_promotion.png',
+  height: 512,
+  width: 512,
 }
+import MintNFTComponent from '@/components/nft/nft_mint'
+import { useState } from 'react'
 export default function Hero() {
+  const [showMintComponent, setShowMintComponent] = useState(false);
   return (
     <section className="relative">
 
@@ -39,10 +43,25 @@ export default function Hero() {
               <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">We are AiWeb3 Community, focuing on Web3/AI tech, particularly for polkadot ecosystem.</p>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
-                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Join Us via NFT Mint</a>
+                  {/* <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Join Us via NFT Mint</a> */}
+                  <div>
+                    
+                    <a
+                      className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0"
+                      href="#0"
+                      onClick={(e) => {
+                        e.preventDefault(); // Prevent default anchor behavior
+                        setShowMintComponent(!showMintComponent); // Toggle the display of MintNFTComponent
+                      }}
+                    >
+                      Join Us via NFT Mint
+                    </a>
+                    {showMintComponent && <MintNFTComponent />}
+                  </div>
                 </div>
                 <div>
                   <a className="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">Learn more</a>
+                  {/* <a> <MintNFTComponent /> </a> */}
                 </div>
               </div>
             </div>
@@ -50,13 +69,13 @@ export default function Hero() {
 
           {/* Hero image */}
           <ModalVideo
-            thumb = {aiweb_imaga_data}
+            thumb={aiweb_imaga_data}
             thumbWidth={768}
             thumbHeight={432}
             thumbAlt="Modal video thumbnail"
             video="/videos/aiweb3_promotion.mp4"
             videoWidth={1920}
-            videoHeight={1080} 
+            videoHeight={1080}
           />
 
         </div>
