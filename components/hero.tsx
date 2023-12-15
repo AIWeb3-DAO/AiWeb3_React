@@ -9,6 +9,7 @@ let aiweb_imaga_data: StaticImageData = {
 }
 import MintNFTComponent from '@/components/nft/nft_mint'
 import { useState } from 'react'
+import { getUserAllImg, mintNFTwithCode,createUserProfile} from './test_code'
 export default function Hero() {
   const [showMintComponent, setShowMintComponent] = useState(false);
   return (
@@ -41,11 +42,12 @@ export default function Hero() {
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Build Web3 Community <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Together</span></h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">We are AiWeb3 Community, focuing on Web3/AI tech, particularly for polkadot ecosystem.</p>
+              
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
                   {/* <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Join Us via NFT Mint</a> */}
                   <div>
-                    
+                   
                     <a
                       className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0"
                       href="#0"
@@ -55,6 +57,39 @@ export default function Hero() {
                       }}
                     >
                       Join Us via NFT Mint
+                    </a>
+                    <a
+                      className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0"
+                      href="#0"
+                      onClick={async (e) => {
+                        e.preventDefault(); // Prevent default anchor behavior
+                        await getUserAllImg()
+                        // setShowMintComponent(!showMintComponent); // Toggle the display of MintNFTComponent
+                      }}
+                    >
+                      getUserAllImg
+                    </a>
+                    <a
+                      className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0"
+                      href="#0"
+                      onClick={async (e) => {
+                        e.preventDefault(); // Prevent default anchor behavior
+                        await mintNFTwithCode()
+                        // setShowMintComponent(!showMintComponent); // Toggle the display of MintNFTComponent
+                      }}
+                    >
+                      mintNFTwithCode
+                    </a>
+                    <a
+                      className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0"
+                      href="#0"
+                      onClick={async (e) => {
+                        e.preventDefault(); // Prevent default anchor behavior
+                        await createUserProfile()
+                        // setShowMintComponent(!showMintComponent); // Toggle the display of MintNFTComponent
+                      }}
+                    >
+                      createUserProfile
                     </a>
                     {showMintComponent && <MintNFTComponent />}
                   </div>
